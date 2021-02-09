@@ -74,7 +74,6 @@ void wavWriter::wave_write(vector<float> data, char *filename) {
     fwrite(data_ID, 1, 4, fp);
     fwrite(&data_size, 4, 1, fp);
     //音声データ書き込み
-    fp = fopen(filename, "wb");
     for (n = 0; n < data.size(); n++) {
         //リミッター
         if (data[n] > 1) {

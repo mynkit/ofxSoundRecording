@@ -1,0 +1,8 @@
+bin/ofxSoundRecording.app/
+bin/ofxSoundRecordingDebug.app/
+/obj/
+/.vscode/
+*.DS_Store
+.venv/
+*.wav
+

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60FE3F5A25D2AF9400EF6EFA /* datParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5825D2AF9400EF6EFA /* datParser.cpp */; };
 		60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */; };
 		60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
@@ -27,8 +26,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		60FE3F5825D2AF9400EF6EFA /* datParser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = datParser.cpp; sourceTree = "<group>"; };
-		60FE3F5925D2AF9400EF6EFA /* datParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = datParser.hpp; sourceTree = "<group>"; };
 		60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = wavWriter.cpp; sourceTree = "<group>"; };
 		60FE3F5D25D2B67700EF6EFA /* wavWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wavWriter.hpp; sourceTree = "<group>"; };
 		60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = recordingButton.cpp; sourceTree = "<group>"; };
@@ -554,8 +551,6 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				60FE3F5825D2AF9400EF6EFA /* datParser.cpp */,
-				60FE3F5925D2AF9400EF6EFA /* datParser.hpp */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -661,7 +656,6 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */,
 				60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */,
-				60FE3F5A25D2AF9400EF6EFA /* datParser.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

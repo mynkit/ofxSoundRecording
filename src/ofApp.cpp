@@ -30,7 +30,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofSetBackgroundColor(168, 168, 168);
-    myButton->drawButton(0, 0);
+    myButton->drawButton(ofGetWidth()-3*myButton->buttonWidth, 0);
 }
 
 //--------------------------------------------------------------

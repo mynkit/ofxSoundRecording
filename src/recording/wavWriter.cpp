@@ -10,6 +10,7 @@
 wavWriter::wavWriter(int sampleRate, int bits) {
     this->sampleRate = sampleRate;
     this->bits = bits;
+    recordingOn = false;
 }
 
 void wavWriter::wave_write(string filenameStr) {
@@ -30,9 +31,10 @@ void wavWriter::wave_write(string filenameStr) {
     char data_ID[4];
     long data_size;
     short data_data;
-    //ファイルオープン
+    // .appと同じ階層にファイルを出力する
     filenameStr = "../../../" + filenameStr;
     const char* filename = filenameStr.c_str();
+    // ファイルオープン
     fp = fopen(filename, "wb");
     //ヘッダー書き込み
     header_ID[0] = 'R';
@@ -92,4 +94,15 @@ void wavWriter::wave_write(string filenameStr) {
 
 void wavWriter::recording(float sample) {
     recordingBuffer.push_back(sample);
+}
+
+// レコーディング状態であれば停止、そうでなければレコーディング開始する
+void wavWriter::setRecordingOn() {
+    if (recordingOn) {
+        recordingOn = false;
+    } else {
+        // recordingBufferを再初期化する
+        recordingBuffer.clear();
+        recordingOn = true;
+    }
 }

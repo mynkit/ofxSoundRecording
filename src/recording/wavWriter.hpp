@@ -14,8 +14,10 @@ class wavWriter {
         int sampleRate;
         int bits;
         vector<float> recordingBuffer;
+        bool recordingOn;
         wavWriter(int sampleRate, int bits);
         ~wavWriter();
         void wave_write(string filenameStr);
         void recording(float sample);
+        void setRecordingOn();
 };

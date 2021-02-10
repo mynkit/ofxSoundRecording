@@ -17,3 +17,9 @@ cd openFrameworksFolder/apps/myApps/
 git clone git@github.com:mynkit/ofxSoundRecording.git
 cd ofxSoundRecording
 ```
+
+## How to Use
+
+1. open `ofxSoundRecording.xcodeproj`.
+2. click `Run` button.
+

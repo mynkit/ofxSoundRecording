@@ -12,7 +12,7 @@ wavWriter::wavWriter(int fs, int bits) {
     this->bits = bits;
 }
 
-void wavWriter::wave_write(vector<float> data, char *filename) {
+void wavWriter::wave_write(vector<float> data, string filenameStr) {
     //変数宣言
     FILE *fp;
     int n;
@@ -31,6 +31,8 @@ void wavWriter::wave_write(vector<float> data, char *filename) {
     long data_size;
     short data_data;
     //ファイルオープン
+    filenameStr = "../../../data/" + filenameStr;
+    const char* filename = filenameStr.c_str();
     fp = fopen(filename, "wb");
     //ヘッダー書き込み
     header_ID[0] = 'R';

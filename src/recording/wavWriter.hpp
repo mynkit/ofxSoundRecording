@@ -15,5 +15,5 @@ class wavWriter {
         int bits;
         wavWriter(int fs, int bits);
         ~wavWriter();
-        void wave_write(vector<float> data, char *filename);
+        void wave_write(vector<float> data, string filenameStr);
 };

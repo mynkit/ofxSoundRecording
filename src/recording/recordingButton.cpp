@@ -7,13 +7,14 @@
 
 #include "recordingButton.hpp"
 
-recordingButton::recordingButton(wavWriter* myWavWriter) {
+recordingButton::recordingButton(wavWriter* myWavWriter, metronome* myMetronome) {
     buttonUpperLeftX = 0;
     buttonUpperLeftY = 0;
     butonRadius = 5;
     buttonWidth = 70;
     buttonHeight = 50;
     this->myWavWriter = myWavWriter;
+    this->myMetronome = myMetronome;
     microphoneMute = true;
     microphoneIcon.load("icons/microphone.png");
     muteIcon.load("icons/mute.png");
@@ -118,6 +119,9 @@ void recordingButton::buttonMousePressed(int x, int y, int button) {
             } else {
                 microphoneMute = true;
             }
+        }
+        if (x>=buttonUpperLeftX+buttonWidth*2 && x<buttonUpperLeftX+buttonWidth*3 && y>=buttonUpperLeftY && y<=buttonUpperLeftY+buttonHeight ) {
+            myMetronome->setMetronomeOn();
         }
     }
 }

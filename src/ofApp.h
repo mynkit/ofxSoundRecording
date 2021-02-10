@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "wavWriter.hpp"
 #include "recordingButton.hpp"
+#include "metronome.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -17,10 +18,12 @@ class ofApp : public ofBaseApp{
 
         int bufferSize;
         int sampleRate;
+        int bpm;
         vector<float> inputBuffer;
     
         wavWriter* myWavWriter;
         recordingButton* myButton;
+        metronome* myMetronome;
 
 		void keyPressed(int key);
 		void keyReleased(int key);

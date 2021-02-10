@@ -9,6 +9,7 @@
 
 #include "ofMain.h"
 #include "wavWriter.hpp"
+#include "metronome.hpp"
 
 class recordingButton {
     public:
@@ -18,8 +19,9 @@ class recordingButton {
         int buttonWidth;
         int buttonHeight;
         wavWriter* myWavWriter;
+        metronome* myMetronome;
         bool microphoneMute;
-        recordingButton(wavWriter* myWavWriter);
+        recordingButton(wavWriter* myWavWriter, metronome* myMetronome);
         ~recordingButton();
         void drawButton(int x, int y);
         void drawRecordngButton();

@@ -2,12 +2,14 @@
 
 #define BUFFERSIZE 256; // バッファサイズ(256推奨．大きくすると処理に余裕はでるが遅延が長くなる)
 #define SAMPLERATE 44100; // サンプルレート(Hz)
+#define BPM 160;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
     // audio setup
     bufferSize = BUFFERSIZE;
     sampleRate = SAMPLERATE;
+    bpm = BPM;
     inputBuffer.resize(bufferSize);
     ofSoundStreamSettings settings;
     settings.setOutListener(this);
@@ -19,7 +21,9 @@ void ofApp::setup(){
     sound_stream.setup(settings);
     
     myWavWriter = new wavWriter(sampleRate, 16);
-    myButton = new recordingButton(myWavWriter);
+    myMetronome = new metronome(bpm, sampleRate);
+    myButton = new recordingButton(myWavWriter, myMetronome);
+    myMetronome->loadSound();
 }
 
 //--------------------------------------------------------------
@@ -37,6 +41,7 @@ void ofApp::draw(){
 void ofApp::audioIn(ofSoundBuffer &buffer){
     const int frames = buffer.getNumFrames();
     if (myButton->microphoneMute) {
+        // ミュートのときはマイクから音を拾わない
         for(int i = 0; i < frames; i++){
             inputBuffer[i] = 0.;
         }
@@ -56,6 +61,8 @@ void ofApp::audioOut(ofSoundBuffer &buffer){
         myWavWriter->recording(currentSample);
         buffer[i*channels+0] = currentSample;
         buffer[i*channels+1] = currentSample;
+        
+        myMetronome->play();
     }
 }
 

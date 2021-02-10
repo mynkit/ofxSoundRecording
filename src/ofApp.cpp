@@ -18,7 +18,7 @@ void ofApp::setup(){
     settings.bufferSize = bufferSize;
     sound_stream.setup(settings);
     
-    myWavWriter = new wavWriter(44100, 16);
+    myWavWriter = new wavWriter(sampleRate, 16);
     myButton = new recordingButton(myWavWriter);
 }
 

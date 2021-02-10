@@ -11,9 +11,9 @@
 
 class wavWriter {
     public:
-        int fs;
+        int sampleRate;
         int bits;
-        wavWriter(int fs, int bits);
+        wavWriter(int sampleRate, int bits);
         ~wavWriter();
         void wave_write(vector<float> data, string filenameStr);
 };

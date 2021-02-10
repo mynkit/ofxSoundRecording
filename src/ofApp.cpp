@@ -109,6 +109,5 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-    char* outFileName = "text.wav";
-    myWavWriter->wave_write(recordingBuffer, outFileName);
+    myWavWriter->wave_write(recordingBuffer, "text.wav");
 }

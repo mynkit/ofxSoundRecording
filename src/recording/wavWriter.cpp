@@ -7,8 +7,8 @@
 
 #include "wavWriter.hpp"
 
-wavWriter::wavWriter(int fs, int bits) {
-    this->fs = fs;
+wavWriter::wavWriter(int sampleRate, int bits) {
+    this->sampleRate = sampleRate;
     this->bits = bits;
 }
 
@@ -55,8 +55,8 @@ void wavWriter::wave_write(vector<float> data, string filenameStr) {
     fmt_size = 16;
     fmt_format = 1;
     fmt_channel = 1;
-    fmt_samples_per_sec = fs;
-    fmt_bytes_per_sec = fs * bits / 8;
+    fmt_samples_per_sec = sampleRate;
+    fmt_bytes_per_sec = sampleRate * bits / 8;
     fmt_block_size = bits / 8;
     fmt_bits_per_sample = bits;
     fwrite(fmt_ID, 1, 4, fp);

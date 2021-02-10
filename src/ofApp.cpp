@@ -19,7 +19,7 @@ void ofApp::setup(){
     sound_stream.setup(settings);
     
     myWavWriter = new wavWriter(44100, 16);
-    
+    myButton = new recordingButton(myWavWriter);
 }
 
 //--------------------------------------------------------------
@@ -29,7 +29,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    ofSetBackgroundColor(168, 168, 168);
+    myButton->drawButton(0, 0);
 }
 
 //--------------------------------------------------------------
@@ -74,7 +75,7 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    myButton->buttonMousePressed(x, y, button);
 }
 
 //--------------------------------------------------------------

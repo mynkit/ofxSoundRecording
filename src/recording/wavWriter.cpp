@@ -93,7 +93,9 @@ void wavWriter::wave_write(string filenameStr) {
 }
 
 void wavWriter::recording(float sample) {
-    recordingBuffer.push_back(sample);
+    if (recordingOn) {
+        recordingBuffer.push_back(sample);
+    }
 }
 
 // レコーディング状態であれば停止、そうでなければレコーディング開始する

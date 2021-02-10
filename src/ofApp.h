@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "datParser.hpp"
 #include "wavWriter.hpp"
+#include "recordingButton.hpp"
 
 class ofApp : public ofBaseApp{
 
@@ -20,6 +21,7 @@ class ofApp : public ofBaseApp{
         vector<float> inputBuffer;
     
         wavWriter* myWavWriter;
+        recordingButton* myButton;
 
 		void keyPressed(int key);
 		void keyReleased(int key);

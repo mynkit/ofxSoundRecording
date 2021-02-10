@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		60FE3F5A25D2AF9400EF6EFA /* datParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5825D2AF9400EF6EFA /* datParser.cpp */; };
 		60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */; };
+		60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 /* End PBXBuildFile section */
@@ -30,6 +31,8 @@
 		60FE3F5925D2AF9400EF6EFA /* datParser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = datParser.hpp; sourceTree = "<group>"; };
 		60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = wavWriter.cpp; sourceTree = "<group>"; };
 		60FE3F5D25D2B67700EF6EFA /* wavWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wavWriter.hpp; sourceTree = "<group>"; };
+		60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = recordingButton.cpp; sourceTree = "<group>"; };
+		60FE3F6025D3A62200EF6EFA /* recordingButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = recordingButton.hpp; sourceTree = "<group>"; };
 		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
 		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
 		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
@@ -229,6 +232,8 @@
 			children = (
 				60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */,
 				60FE3F5D25D2B67700EF6EFA /* wavWriter.hpp */,
+				60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */,
+				60FE3F6025D3A62200EF6EFA /* recordingButton.hpp */,
 			);
 			path = recording;
 			sourceTree = "<group>";
@@ -654,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */,
 				60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */,
 				60FE3F5A25D2AF9400EF6EFA /* datParser.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,

@@ -5,9 +5,24 @@
 //  Created by keita miyano on 2021/02/10.
 //
 
-#ifndef recordingButton_hpp
-#define recordingButton_hpp
+#pragma once
 
-#include <stdio.h>
+#include "ofMain.h"
+#include "wavWriter.hpp"
 
-#endif /* recordingButton_hpp */
+class recordingButton {
+    public:
+        int buttonUpperLeftX;
+        int buttonUpperLeftY;
+        int butonRadius;
+        int buttonWidth;
+        int buttonHeight;
+        wavWriter* myWavWriter;
+        recordingButton(wavWriter* myWavWriter);
+        ~recordingButton();
+        void drawButton(int x, int y);
+        void drawRecordngButton();
+        void drawMicrophoneButton();
+        void drawMetronomeButton();
+        void buttonMousePressed(int x, int y, int button);
+};

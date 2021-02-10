@@ -12,7 +12,7 @@ wavWriter::wavWriter(int sampleRate, int bits) {
     this->bits = bits;
 }
 
-void wavWriter::wave_write(vector<float> data, string filenameStr) {
+void wavWriter::wave_write(string filenameStr) {
     //変数宣言
     FILE *fp;
     int n;
@@ -39,7 +39,7 @@ void wavWriter::wave_write(vector<float> data, string filenameStr) {
     header_ID[1] = 'I';
     header_ID[2] = 'F';
     header_ID[3] = 'F';
-    header_size = 36 + data.size() * 2;
+    header_size = 36 + recordingBuffer.size() * 2;
     header_type[0] = 'W';
     header_type[1] = 'A';
     header_type[2] = 'V';
@@ -72,20 +72,24 @@ void wavWriter::wave_write(vector<float> data, string filenameStr) {
     data_ID[1] = 'a';
     data_ID[2] = 't';
     data_ID[3] = 'a';
-    data_size = data.size() * 2;
+    data_size = recordingBuffer.size() * 2;
     fwrite(data_ID, 1, 4, fp);
     fwrite(&data_size, 4, 1, fp);
     //音声データ書き込み
-    for (n = 0; n < data.size(); n++) {
+    for (n = 0; n < recordingBuffer.size(); n++) {
         //リミッター
-        if (data[n] > 1) {
+        if (recordingBuffer[n] > 1) {
             data_data = 32767;
-        } else if (data[n] < -1) {
+        } else if (recordingBuffer[n] < -1) {
             data_data = -32767;
         } else {
-            data_data = (short)(data[n] * 32767.0);
+            data_data = (short)(recordingBuffer[n] * 32767.0);
         }
         fwrite(&data_data, 2, 1, fp);
     }
     fclose(fp);
+}
+
+void wavWriter::recording(float sample) {
+    recordingBuffer.push_back(sample);
 }

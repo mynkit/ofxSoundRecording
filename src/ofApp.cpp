@@ -46,7 +46,7 @@ void ofApp::audioOut(ofSoundBuffer &buffer){
     for(int i = 0; i < frames; i++){
         const int channels = buffer.getNumChannels();
         float currentSample = inputBuffer[i];
-        recordingBuffer.push_back(currentSample);
+        myWavWriter->recording(currentSample);
         buffer[i*channels+0] = currentSample;
         buffer[i*channels+1] = currentSample;
     }
@@ -109,5 +109,5 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 
 //--------------------------------------------------------------
 void ofApp::exit(){
-    myWavWriter->wave_write(recordingBuffer, "text.wav");
+    myWavWriter->wave_write("text.wav");
 }

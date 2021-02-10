@@ -18,7 +18,6 @@ class ofApp : public ofBaseApp{
         int bufferSize;
         int sampleRate;
         vector<float> inputBuffer;
-        vector<float> recordingBuffer;
     
         wavWriter* myWavWriter;
 

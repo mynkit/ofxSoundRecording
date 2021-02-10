@@ -24,7 +24,7 @@ class metronome {
         ofSoundPlayer  tabla;
 
     private:
-        int currentIndex;
-        int targetSampleNum;
+        float currentIndex;
+        float targetSampleNum;
 };
 

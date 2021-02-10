@@ -14,7 +14,7 @@ metronome::metronome(int bpm, int sampleRate) {
     this->sampleRate = sampleRate;
     // 1分間に{bpm}回音なるので、1回の音の長さは{60./bpm}秒.
     // その間のサンプル数は{60./bpm * sampleRate}
-    targetSampleNum = (sampleRate * 60) / bpm;
+    targetSampleNum = (sampleRate * 60.) / bpm;
 }
 
 // ofApp.cppのsetup内で用いてください
@@ -37,12 +37,12 @@ void metronome::setMetronomeOn() {
 // ofApp.cppのaudioOut内で用いてください
 void metronome::play() {
     if (metronomeOn) {
-        if (currentIndex % targetSampleNum == 0) {
-            tabla.play();
-        }
-        currentIndex++;
         if (currentIndex >= targetSampleNum) {
             currentIndex -= targetSampleNum;
         }
+        if (currentIndex < 1) {
+            tabla.play();
+        }
+        currentIndex++;
     }
 }

@@ -36,8 +36,14 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::audioIn(ofSoundBuffer &buffer){
     const int frames = buffer.getNumFrames();
-    for(int i = 0; i < frames; i++){
-        inputBuffer[i] = buffer[i];
+    if (myButton->microphoneMute) {
+        for(int i = 0; i < frames; i++){
+            inputBuffer[i] = 0.;
+        }
+    } else {
+        for(int i = 0; i < frames; i++){
+            inputBuffer[i] = buffer[i];
+        }
     }
 }
 

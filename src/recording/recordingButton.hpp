@@ -18,6 +18,7 @@ class recordingButton {
         int buttonWidth;
         int buttonHeight;
         wavWriter* myWavWriter;
+        bool microphoneMute;
         recordingButton(wavWriter* myWavWriter);
         ~recordingButton();
         void drawButton(int x, int y);
@@ -25,4 +26,7 @@ class recordingButton {
         void drawMicrophoneButton();
         void drawMetronomeButton();
         void buttonMousePressed(int x, int y, int button);
+    private:
+        ofImage microphoneIcon;
+        ofImage muteIcon;
 };

@@ -14,6 +14,9 @@ recordingButton::recordingButton(wavWriter* myWavWriter) {
     buttonWidth = 70;
     buttonHeight = 50;
     this->myWavWriter = myWavWriter;
+    microphoneMute = true;
+    microphoneIcon.load("icons/microphone.png");
+    muteIcon.load("icons/mute.png");
 }
 
 void recordingButton::drawButton(int x, int y) {
@@ -66,8 +69,18 @@ void recordingButton::drawMicrophoneButton() {
     ofSetColor(119, 118, 118);
     ofDrawRectangle(buttonUpperLeftX+buttonWidth, buttonUpperLeftY, 5, buttonHeight);
     ofDrawRectangle(buttonUpperLeftX+buttonWidth*2-5, buttonUpperLeftY, 5, buttonHeight);
-    ofSetColor(119, 118, 118);
-    ofDrawRectRounded(MicrophoneButton, butonRadius);
+    // マイク・ミュートボタン
+    if (microphoneMute) {
+        ofSetColor(119, 118, 118);
+        ofDrawRectRounded(MicrophoneButton, butonRadius);
+        ofSetColor(0, 0, 0);
+        muteIcon.draw(MicrophoneButton.x + buttonWidth/2 - buttonHeight/4, MicrophoneButton.y + buttonHeight/4, buttonHeight/2, buttonHeight/2);
+    } else {
+        ofSetColor(57, 198, 93);
+        ofDrawRectRounded(MicrophoneButton, butonRadius);
+        ofSetColor(0, 0, 0);
+        microphoneIcon.draw(MicrophoneButton.x + buttonWidth/2 - buttonHeight/4, MicrophoneButton.y + buttonHeight/4, buttonHeight/2, buttonHeight/2);
+    }
     // 右隣のボタンとの境界線
     ofSetColor(91, 91, 91);
     ofDrawRectangle(buttonUpperLeftX+buttonWidth*2-1, buttonUpperLeftY, 2, buttonHeight);
@@ -98,6 +111,13 @@ void recordingButton::buttonMousePressed(int x, int y, int button) {
         // 録音ボタン
         if (x>=buttonUpperLeftX && x<buttonUpperLeftX+buttonWidth && y>=buttonUpperLeftY && y<=buttonUpperLeftY+buttonHeight ) {
             myWavWriter->setRecordingOn();
+        }
+        if (x>=buttonUpperLeftX+buttonWidth && x<buttonUpperLeftX+buttonWidth*2 && y>=buttonUpperLeftY && y<=buttonUpperLeftY+buttonHeight ) {
+            if (microphoneMute) {
+                microphoneMute = false;
+            } else {
+                microphoneMute = true;
+            }
         }
     }
 }

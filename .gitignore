@@ -5,5 +5,5 @@ bin/ofxSoundRecordingDebug.app/
 *.DS_Store
 .venv/
 *.wav
-!bin/data/sounds/*
+!bin/data/sounds/tabla/*
 

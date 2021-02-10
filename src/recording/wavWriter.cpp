@@ -31,7 +31,7 @@ void wavWriter::wave_write(vector<float> data, string filenameStr) {
     long data_size;
     short data_data;
     //ファイルオープン
-    filenameStr = "../../../data/" + filenameStr;
+    filenameStr = "../../../" + filenameStr;
     const char* filename = filenameStr.c_str();
     fp = fopen(filename, "wb");
     //ヘッダー書き込み

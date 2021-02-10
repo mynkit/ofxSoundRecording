@@ -24,6 +24,7 @@ void ofApp::setup(){
     myMetronome = new metronome(bpm, sampleRate);
     myButton = new recordingButton(myWavWriter, myMetronome);
     myMetronome->loadSound();
+    myButton->loadImg();
 }
 
 //--------------------------------------------------------------

@@ -23,6 +23,7 @@ class recordingButton {
         bool microphoneMute;
         recordingButton(wavWriter* myWavWriter, metronome* myMetronome);
         ~recordingButton();
+        void loadImg();
         void drawButton(int x, int y);
         void drawRecordngButton();
         void drawMicrophoneButton();
@@ -31,4 +32,5 @@ class recordingButton {
     private:
         ofImage microphoneIcon;
         ofImage muteIcon;
+        ofImage metronomeIcon;
 };

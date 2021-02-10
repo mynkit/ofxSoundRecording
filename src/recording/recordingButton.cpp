@@ -16,8 +16,12 @@ recordingButton::recordingButton(wavWriter* myWavWriter, metronome* myMetronome)
     this->myWavWriter = myWavWriter;
     this->myMetronome = myMetronome;
     microphoneMute = true;
+}
+
+void recordingButton::loadImg() {
     microphoneIcon.load("icons/microphone.png");
     muteIcon.load("icons/mute.png");
+    metronomeIcon.load("icons/metronome.png");
 }
 
 void recordingButton::drawButton(int x, int y) {
@@ -68,8 +72,8 @@ void recordingButton::drawMicrophoneButton() {
     MicrophoneButton.width = buttonWidth;
     MicrophoneButton.height = buttonHeight;
     ofSetColor(119, 118, 118);
-    ofDrawRectangle(buttonUpperLeftX+buttonWidth, buttonUpperLeftY, 5, buttonHeight);
-    ofDrawRectangle(buttonUpperLeftX+buttonWidth*2-5, buttonUpperLeftY, 5, buttonHeight);
+    ofDrawRectangle(buttonUpperLeftX+buttonWidth, buttonUpperLeftY, butonRadius, buttonHeight); //繋ぎ部分
+    ofDrawRectangle(buttonUpperLeftX+buttonWidth*2-butonRadius, buttonUpperLeftY, butonRadius, buttonHeight); //繋ぎ部分
     // マイク・ミュートボタン
     if (microphoneMute) {
         ofSetColor(119, 118, 118);
@@ -101,9 +105,17 @@ void recordingButton::drawMetronomeButton() {
     MetronomeButton.x -= 1;
     MetronomeButton.y -= 1;
     ofSetColor(119, 118, 118);
-    ofDrawRectangle(buttonUpperLeftX+buttonWidth*2, buttonUpperLeftY, 5, buttonHeight);
-    ofSetColor(119, 118, 118);
-    ofDrawRectRounded(MetronomeButton, butonRadius);
+    ofDrawRectangle(buttonUpperLeftX+buttonWidth*2, buttonUpperLeftY, butonRadius, buttonHeight); //繋ぎ部分
+    if (myMetronome->metronomeOn) {
+        ofSetColor(101, 48, 162);
+        ofDrawRectRounded(MetronomeButton, butonRadius);
+    } else {
+        ofSetColor(119, 118, 118);
+        ofDrawRectRounded(MetronomeButton, butonRadius);
+    }
+    // メトロノームアイコン
+    ofSetColor(0, 0, 0);
+    metronomeIcon.draw(MetronomeButton.x + buttonWidth/2 - buttonHeight/4, MetronomeButton.y + buttonHeight/4, 3*buttonHeight/5, 3*buttonHeight/5);
 }
 
 void recordingButton::buttonMousePressed(int x, int y, int button) {

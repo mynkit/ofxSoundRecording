@@ -19,7 +19,7 @@ metronome::metronome(int bpm, int sampleRate) {
 
 // ofApp.cppのsetup内で用いてください
 void metronome::loadSound() {
-    tabla.load("sounds/tabla/011_hi_hit2.wav");
+    tabla.load("sounds/hh27/002_hh27hit1.wav");
 }
 
 void metronome::setBpm(int bpm) {

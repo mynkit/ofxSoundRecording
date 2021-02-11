@@ -4,6 +4,5 @@ bin/ofxSoundRecordingDebug.app/
 /.vscode/
 *.DS_Store
 .venv/
-*.wav
-!bin/data/sounds/tabla/*
+bin/*.wav
 

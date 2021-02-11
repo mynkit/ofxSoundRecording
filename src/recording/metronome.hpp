@@ -21,7 +21,7 @@ class metronome {
         void setMetronomeOn();
         void loadSound();
         void play();
-        ofSoundPlayer  tabla;
+        ofSoundPlayer click;
 
     private:
         float currentIndex;

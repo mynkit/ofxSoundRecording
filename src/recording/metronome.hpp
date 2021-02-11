@@ -18,6 +18,7 @@ class metronome {
         metronome(int bpm, int sampleRate);
         ~metronome();
         void setBpm(int bpm);
+        void setVolume(float rate);
         void setMetronomeOn();
         void loadSound();
         void play();

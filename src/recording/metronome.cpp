@@ -26,6 +26,10 @@ void metronome::setBpm(int bpm) {
     this->bpm = bpm;
 }
 
+void metronome::setVolume(float rate) {
+    click.setVolume(rate);
+}
+
 void metronome::setMetronomeOn() {
     if (metronomeOn) {
         metronomeOn = false;

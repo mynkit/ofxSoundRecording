@@ -7,9 +7,14 @@
 
 #include "wavWriter.hpp"
 
-wavWriter::wavWriter(int sampleRate, int bits) {
+// sampleRate: サンプリングレート(44100など)
+// bits: 基本16
+// channel: 1はモノラル, 2はステレオ
+// ステレオの場合はL, Rの順番に各サンプルをrecordingしていく
+wavWriter::wavWriter(int sampleRate, int bits, int channel) {
     this->sampleRate = sampleRate;
     this->bits = bits;
+    this->channel = channel;
     recordingOn = false;
 }
 
@@ -56,7 +61,7 @@ void wavWriter::wave_write(string filenameStr) {
     fmt_ID[3] = ' ';
     fmt_size = 16;
     fmt_format = 1;
-    fmt_channel = 1;
+    fmt_channel = channel;
     fmt_samples_per_sec = sampleRate;
     fmt_bytes_per_sec = sampleRate * bits / 8;
     fmt_block_size = bits / 8;

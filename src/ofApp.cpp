@@ -20,7 +20,7 @@ void ofApp::setup(){
     settings.bufferSize = bufferSize;
     sound_stream.setup(settings);
     
-    myWavWriter = new wavWriter(sampleRate, 16);
+    myWavWriter = new wavWriter(sampleRate, 16, 2);
     myMetronome = new metronome(bpm, sampleRate);
     myButton = new recordingButton(myWavWriter, myMetronome);
     myMetronome->loadSound();
@@ -59,7 +59,8 @@ void ofApp::audioOut(ofSoundBuffer &buffer){
     for(int i = 0; i < frames; i++){
         const int channels = buffer.getNumChannels();
         float currentSample = inputBuffer[i];
-        myWavWriter->recording(currentSample);
+        myWavWriter->recording(currentSample); // L
+        myWavWriter->recording(-0.9*currentSample); // R
         buffer[i*channels+0] = currentSample;
         buffer[i*channels+1] = currentSample;
         

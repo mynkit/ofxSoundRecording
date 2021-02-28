@@ -10,6 +10,22 @@ void ofApp::setup(){
     bufferSize = BUFFERSIZE;
     sampleRate = SAMPLERATE;
     bpm = BPM;
+    string filepath = ofToDataPath("owarinokisetsuguitar.wav");
+    if( ofFile::doesFileExist( filepath ) ){
+        audiofile.load( filepath );
+        if (!audiofile.loaded()){
+            ofLogError()<<"error loading file, double check the file path";
+        }
+    }else{
+        ofLogError()<<"input file does not exists";
+    }
+    //playhead = numeric_limits<int>::max(); // because it is converted to int for check
+    playhead = 0;
+    step = audiofile.samplerate() / sampleRate;
+    cout << filepath << "のサンプリングレート: " << audiofile.samplerate() << endl;
+    cout << filepath << "の長さ: " << audiofile.length() << endl;
+    cout << filepath << "のチャンネル数: " << audiofile.channels() << endl;
+    
     inputBuffer.resize(bufferSize);
     ofSoundStreamSettings settings;
     settings.setOutListener(this);
@@ -42,9 +58,22 @@ void ofApp::draw(){
 void ofApp::audioIn(ofSoundBuffer &buffer){
     const int frames = buffer.getNumFrames();
     if (myButton->microphoneMute) {
-        // ミュートのときはマイクから音を拾わない
-        for(int i = 0; i < frames; i++){
-            inputBuffer[i] = 0.;
+        // ミュートのときはwavファイルを再生
+        for (int i = 0; i < frames; i++){
+            int n = playhead;
+            if( n < audiofile.length()-1 ){
+                for( size_t k=0; k<buffer.getNumChannels(); ++k){
+                    float fract = playhead - (double) n;
+                    float s0 = audiofile.sample( n, k );
+                    float s1 = audiofile.sample( n+1, k );
+                    float isample = s0*(1.0-fract) + s1*fract; // linear interpolation
+                    inputBuffer[i] = isample;
+                }
+                playhead += step;
+            }else{
+                inputBuffer[i] = 0.;
+                playhead = 0; // ループ
+            }
         }
     } else {
         for(int i = 0; i < frames; i++){
@@ -60,10 +89,10 @@ void ofApp::audioOut(ofSoundBuffer &buffer){
         const int channels = buffer.getNumChannels();
         float currentSample = inputBuffer[i];
         myWavWriter->recording(currentSample); // L
-        myWavWriter->recording(-0.9*currentSample); // R
+        myWavWriter->recording(currentSample); // R
         buffer[i*channels+0] = currentSample;
         buffer[i*channels+1] = currentSample;
-        
+
         myMetronome->play();
     }
 }

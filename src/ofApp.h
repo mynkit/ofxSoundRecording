@@ -4,6 +4,7 @@
 #include "wavWriter.hpp"
 #include "recordingButton.hpp"
 #include "metronome.hpp"
+#include "ofxAudioFile.h"
 
 class ofApp : public ofBaseApp{
 
@@ -24,6 +25,9 @@ class ofApp : public ofBaseApp{
         wavWriter* myWavWriter;
         recordingButton* myButton;
         metronome* myMetronome;
+        ofxAudioFile audiofile;
+        float playhead;
+        float step;
 
 		void keyPressed(int key);
 		void keyReleased(int key);

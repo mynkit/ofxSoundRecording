@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */; };
-		60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */; };
-		60FE3F6425D3F07F00EF6EFA /* metronome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60FE3F6225D3F07F00EF6EFA /* metronome.cpp */; };
+		374B398C310F6E29D6D77488 /* wavWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A8EE2F0EE54D52423A6F75AA /* wavWriter.cpp */; };
+		3C1E01A4BDFBF0F4C07C581D /* metronome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FD59DAB6AB580EAA582FA3DD /* metronome.cpp */; };
+		3F2CDD3D88F7CE132118D049 /* recordingButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A664A7B094CD77291C3A019C /* recordingButton.cpp */; };
+		55169838B1C1CE8A3035E2D8 /* ofxAudioFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3794A57D8EFC646921513FD9 /* ofxAudioFile.cpp */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 /* End PBXBuildFile section */
@@ -27,12 +28,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = wavWriter.cpp; sourceTree = "<group>"; };
-		60FE3F5D25D2B67700EF6EFA /* wavWriter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wavWriter.hpp; sourceTree = "<group>"; };
-		60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = recordingButton.cpp; sourceTree = "<group>"; };
-		60FE3F6025D3A62200EF6EFA /* recordingButton.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = recordingButton.hpp; sourceTree = "<group>"; };
-		60FE3F6225D3F07F00EF6EFA /* metronome.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = metronome.cpp; sourceTree = "<group>"; };
-		60FE3F6325D3F07F00EF6EFA /* metronome.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = metronome.hpp; sourceTree = "<group>"; };
+		1348F219A58DFD5F0ADDF5D1 /* recordingButton.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = recordingButton.hpp; path = src/recording/recordingButton.hpp; sourceTree = SOURCE_ROOT; };
+		14CE30EFC660375B0E3A33CB /* dr_wav.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_wav.h; path = ../../../addons/ofxAudioFile/libs/dr_wav.h; sourceTree = SOURCE_ROOT; };
+		3794A57D8EFC646921513FD9 /* ofxAudioFile.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxAudioFile.cpp; path = ../../../addons/ofxAudioFile/src/ofxAudioFile.cpp; sourceTree = SOURCE_ROOT; };
+		52FD122EF24A07CC48E76C1A /* stb_vorbis.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = stb_vorbis.h; path = ../../../addons/ofxAudioFile/libs/stb_vorbis.h; sourceTree = SOURCE_ROOT; };
+		6D7D0C59432232100BFCE006 /* metronome.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = metronome.hpp; path = src/recording/metronome.hpp; sourceTree = SOURCE_ROOT; };
+		A664A7B094CD77291C3A019C /* recordingButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = recordingButton.cpp; path = src/recording/recordingButton.cpp; sourceTree = SOURCE_ROOT; };
+		A7460711EFAA29E29B900534 /* ofxAudioFile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxAudioFile.h; path = ../../../addons/ofxAudioFile/src/ofxAudioFile.h; sourceTree = SOURCE_ROOT; };
+		A8EE2F0EE54D52423A6F75AA /* wavWriter.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = wavWriter.cpp; path = src/recording/wavWriter.cpp; sourceTree = SOURCE_ROOT; };
+		C3CCD2226B35155DE0F050F6 /* dr_flac.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_flac.h; path = ../../../addons/ofxAudioFile/libs/dr_flac.h; sourceTree = SOURCE_ROOT; };
+		D58D44DBBD421ADE63291045 /* dr_mp3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = dr_mp3.h; path = ../../../addons/ofxAudioFile/libs/dr_mp3.h; sourceTree = SOURCE_ROOT; };
+		DDD3DA22BE1AADE58BFE3175 /* wavWriter.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = wavWriter.hpp; path = src/recording/wavWriter.hpp; sourceTree = SOURCE_ROOT; };
 		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
 		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
 		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
@@ -214,6 +220,7 @@
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		FD59DAB6AB580EAA582FA3DD /* metronome.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = metronome.cpp; path = src/recording/metronome.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,17 +234,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60FE3F5B25D2B65600EF6EFA /* recording */ = {
+		3FE22A25DEBB96787DAEB9D9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				60FE3F5C25D2B67700EF6EFA /* wavWriter.cpp */,
-				60FE3F5D25D2B67700EF6EFA /* wavWriter.hpp */,
-				60FE3F5F25D3A62200EF6EFA /* recordingButton.cpp */,
-				60FE3F6025D3A62200EF6EFA /* recordingButton.hpp */,
-				60FE3F6225D3F07F00EF6EFA /* metronome.cpp */,
-				60FE3F6325D3F07F00EF6EFA /* metronome.hpp */,
+				3794A57D8EFC646921513FD9 /* ofxAudioFile.cpp */,
+				A7460711EFAA29E29B900534 /* ofxAudioFile.h */,
 			);
-			path = recording;
+			name = src;
 			sourceTree = "<group>";
 		};
 		6948EE371B920CB800B5AC1A /* local_addons */ = {
@@ -247,11 +250,32 @@
 			name = local_addons;
 			sourceTree = "<group>";
 		};
+		6D1C73FC524C750B5BF8D039 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				C3CCD2226B35155DE0F050F6 /* dr_flac.h */,
+				D58D44DBBD421ADE63291045 /* dr_mp3.h */,
+				14CE30EFC660375B0E3A33CB /* dr_wav.h */,
+				52FD122EF24A07CC48E76C1A /* stb_vorbis.h */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				D8D8E0F43C631167E024126A /* ofxAudioFile */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		D8D8E0F43C631167E024126A /* ofxAudioFile */ = {
+			isa = PBXGroup;
+			children = (
+				6D1C73FC524C750B5BF8D039 /* libs */,
+				3FE22A25DEBB96787DAEB9D9 /* src */,
+			);
+			name = ofxAudioFile;
 			sourceTree = "<group>";
 		};
 		E42962AA2163EDD300A6A9E2 /* openFrameworks */ = {
@@ -552,13 +576,26 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				60FE3F5B25D2B65600EF6EFA /* recording */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				ECA5DAF6BE2000220AAEDC50 /* recording */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
+		};
+		ECA5DAF6BE2000220AAEDC50 /* recording */ = {
+			isa = PBXGroup;
+			children = (
+				FD59DAB6AB580EAA582FA3DD /* metronome.cpp */,
+				1348F219A58DFD5F0ADDF5D1 /* recordingButton.hpp */,
+				DDD3DA22BE1AADE58BFE3175 /* wavWriter.hpp */,
+				A664A7B094CD77291C3A019C /* recordingButton.cpp */,
+				A8EE2F0EE54D52423A6F75AA /* wavWriter.cpp */,
+				6D7D0C59432232100BFCE006 /* metronome.hpp */,
+			);
+			name = recording;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -658,11 +695,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60FE3F6425D3F07F00EF6EFA /* metronome.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
-				60FE3F6125D3A62200EF6EFA /* recordingButton.cpp in Sources */,
-				60FE3F5E25D2B67700EF6EFA /* wavWriter.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				3C1E01A4BDFBF0F4C07C581D /* metronome.cpp in Sources */,
+				3F2CDD3D88F7CE132118D049 /* recordingButton.cpp in Sources */,
+				374B398C310F6E29D6D77488 /* wavWriter.cpp in Sources */,
+				55169838B1C1CE8A3035E2D8 /* ofxAudioFile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +731,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
@@ -717,6 +759,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -756,6 +802,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -791,6 +841,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CODE_SIGN_FLAGS = "--deep";
@@ -815,6 +869,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -843,6 +901,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(OF_CORE_HEADERS)",
 					src,
+					src,
+					src/recording,
+					../../../addons/ofxAudioFile/libs,
+					../../../addons/ofxAudioFile/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
